@@ -59,7 +59,7 @@ jobs:
             s3://${{ secrets.S3_BUCKET }}/$VERSION_LABEL.war
           echo "VERSION_LABEL=$VERSION_LABEL" >> $GITHUB_ENV
 
-      - name: Create Beanstalk application version
+      - name: Create Beanstalk application versions
         run: |
           aws elasticbeanstalk create-application-version \
             --application-name ${{ secrets.EB_APPLICATION_NAME }} \
